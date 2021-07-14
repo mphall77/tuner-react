@@ -1,0 +1,11 @@
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(26, 193, 221);
+}
+
+nav a {
+	margin: 1rem;
+	text-decoration: none;
+}
