@@ -3,6 +3,7 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	background-color: rgb(26, 193, 221);
+	width: 100%;
 }
 
 nav a {
