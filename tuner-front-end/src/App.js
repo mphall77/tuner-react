@@ -1,6 +1,5 @@
 // DEPENDENCIES
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import axios from "axios";
 import "./App.css";
 
 // COMPONENTS
@@ -9,6 +8,7 @@ import NavBar from "./Components/NavBar";
 // PAGES
 import SongsIndex from "./Pages/SongIndex";
 import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
 
 function App() {
 	return (
@@ -21,6 +21,9 @@ function App() {
 					</Route>
 					<Route exact path="/songs/:id">
 						<Show />
+					</Route>
+					<Route path="songs/:id/edit">
+						<Edit />
 					</Route>
 				</Switch>
 			</Router>
