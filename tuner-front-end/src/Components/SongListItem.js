@@ -1,14 +1,13 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const SongListItem = ({ song, id }) => {
 	return (
 		<tr>
 			<td>
-				<a href="#" target="_blank" rel="noreferrer">
-					{song.name}
-				</a>
+				<Link to={`songs/${id}`}>{song.name}</Link>
 			</td>
 			<td>{song.artist}</td>
+			<td>{song.album}</td>
 			<td>{song.time}</td>
 			<td>{song.isFavorite ? <span>✅</span> : <span>🧐</span>}</td>
 		</tr>

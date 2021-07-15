@@ -24,10 +24,14 @@ const SongsList = () => {
 		<div className="Songs">
 			<section className="table-container">
 				<table className="glass">
+					<div className="blurb">
+						<h1>That's My Jam!</h1>
+					</div>
 					<thead>
 						<tr>
 							<th>Song</th>
 							<th>Artist</th>
+							<th>Album</th>
 							<th>Time</th>
 							<th>Favorite</th>
 						</tr>
