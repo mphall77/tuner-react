@@ -14,39 +14,44 @@ const SongEditForm = () => {
 		artist: "",
 		album: "",
 		time: "",
-		is_favorite: Boolean,
+		is_favorite: "",
 	});
 
-	const fetchSong = async () => {
-		try {
-			const res = await axios.get(`${API}/songs/:${id}/edit`);
-			setSelectedSong(res);
-		} catch (err) {
-			console.log(err);
-		}
-	};
-
-	const updateSongList = async () => {
-		try {
-			let res = await axios.get(`${API}/songs/${id}`);
-			console.log("Selected Song:", res);
-			// const newSong = [...selectedSong];
-			// newSong[] with id of ${id} = updatedSong
-			// setSelectedSong(newSong);
-		} catch (err) {
-			console.log(err);
-		}
-	};
-
 	const handleTextChange = (e) => {
-		setSelectedSong({ ...selectedSong, [e.target.id]: e.target.value });
-		// setSelectedSong((prevSelectedSong)=>[ ...prevSelectedSong, ([e.target.id]: e.target.value ]));
+		//  setSelectedSong(prevSelectedSong =>{...prevSelectedSong, [e.target.name]: e.target.value);
+		setSelectedSong({ ...selectedSong, [e.target.name]: e.target.value });
+		console.log("selected song:", selectedSong);
+	};
+
+	const handleCheckbox = (e) => {
+		setSelectedSong({ ...selectedSong, [e.target.name]: e.target.checked });
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		updateSongList();
+		updateSong(selectedSong);
 		history.push(`/songs/${id}`);
+		console.log("pushed");
+	};
+
+	const fetchSong = async () => {
+		try {
+			const res = await axios.get(`${API}/songs/${id}`);
+			setSelectedSong(res.data.payload);
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	const updateSong = async () => {
+		console.log("in updateSong", selectedSong);
+		try {
+			const newSong = selectedSong;
+			setSelectedSong(newSong);
+			console.log("new SONG", selectedSong);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	useEffect(() => {
@@ -55,62 +60,57 @@ const SongEditForm = () => {
 
 	return (
 		<section className="Edit">
-			<h2>hi from edit</h2>
+			<h1>Let's change it up</h1>
 			<form>
 				<label>
-					Name:{" "}
+					Name:
 					<input
 						type="text"
-						id="name"
+						name="name"
 						value={selectedSong.name}
 						onChange={handleTextChange}
-						placeholder="Song Title"
-						required
+						size="50"
 					/>
 				</label>
 				<label>
-					Artist:{" "}
+					Artist:
 					<input
 						type="text"
-						id="artist"
+						name="artist"
 						value={selectedSong.artist}
 						onChange={handleTextChange}
-						placeholder="Name of Artist"
-						required
 					/>
 				</label>
 				<label>
-					Album:{" "}
+					Album:
 					<input
 						type="text"
-						id="album"
+						name="album"
 						value={selectedSong.album}
 						onChange={handleTextChange}
 						placeholder="Album"
-						required
 					/>
 				</label>
 				<label>
-					Time:{" "}
+					Time:
 					<input
 						type="text"
-						id="time"
+						name="time"
 						value={selectedSong.time}
 						onChange={handleTextChange}
-						placeholder="1:23"
 						required
 					/>
 				</label>
 				<label>
-					Favorite:{" "}
+					Favorite:
 					<input
 						type="checkbox"
-						id="is_favorite"
-						value={selectedSong.is_favorite}
-						onClick={handleTextChange}
-						checked
+						name="is_favorite"
+						// checked={true}
+						onChange={handleCheckbox}
 					/>
 				</label>
+
 				<div className="submit-btn" onClick={handleSubmit}>
 					<button>Submit</button>
 				</div>

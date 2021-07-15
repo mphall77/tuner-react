@@ -19,11 +19,11 @@ function App() {
 					<Route exact path="/songs">
 						<SongsIndex />
 					</Route>
+					<Route exact path="/songs/:id/edit">
+						<Edit />
+					</Route>
 					<Route exact path="/songs/:id">
 						<Show />
-					</Route>
-					<Route path="songs/:id/edit">
-						<Edit />
 					</Route>
 				</Switch>
 			</Router>
