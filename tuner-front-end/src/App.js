@@ -16,14 +16,12 @@ function App() {
 			<Router>
 				<NavBar />
 				<Switch>
-					<main>
-						<Route exact path="/songs">
-							<SongsIndex />
-						</Route>
-						<Route exact path="/songs/:id">
-							<Show />
-						</Route>
-					</main>
+					<Route exact path="/songs">
+						<SongsIndex />
+					</Route>
+					<Route exact path="/songs/:id">
+						<Show />
+					</Route>
 				</Switch>
 			</Router>
 		</div>

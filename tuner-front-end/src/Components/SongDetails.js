@@ -6,12 +6,14 @@ import { apiURL } from "../util/apiURL";
 const API = apiURL();
 
 const SongDetails = () => {
-	const [songInfo, setSongInfo] = useState([]);
+	const [songInfo, setSongInfo] = useState({});
 	let { id } = useParams();
 
 	const fetchSong = async () => {
+		console.log("ID:", id);
 		try {
-			const res = await axios.get(`${API}/songs/id`);
+			const res = await axios.get(`${API}/songs/${id}`);
+			console.log("RES:", res);
 			setSongInfo(res.data.payload);
 		} catch (err) {
 			console.log(err);
@@ -20,8 +22,7 @@ const SongDetails = () => {
 
 	useEffect(() => {
 		fetchSong();
-	}, [id]);
-
+	}, []);
 	return (
 		<div>
 			<p>
@@ -37,7 +38,7 @@ const SongDetails = () => {
 				<strong>Time:</strong> {songInfo.time}
 			</p>
 			<p>
-				<strong>Fav:</strong> {songInfo.is_favorite}
+				<strong>Fav:</strong> {`${songInfo.is_favorite}`}
 			</p>
 			<section className="details-btns">
 				<div>

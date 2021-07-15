@@ -23,10 +23,10 @@ const SongsList = () => {
 	return (
 		<div className="Songs">
 			<section className="table-container">
-				<table className="glass">
-					<div className="blurb">
+				{/* <div className="blurb">
 						<h1>That's My Jam!</h1>
-					</div>
+					</div> */}
+				<table className="glass">
 					<thead>
 						<tr>
 							<th>Song</th>
@@ -35,12 +35,12 @@ const SongsList = () => {
 							<th>Time</th>
 							<th>Favorite</th>
 						</tr>
-						<tbody>
-							{songs.map((song, id) => {
-								return <SongListItem key={id} song={song} id={id} />;
-							})}
-						</tbody>
 					</thead>
+					<tbody>
+						{songs.map((song) => {
+							return <SongListItem key={song.id} song={song} />;
+						})}
+					</tbody>
 				</table>
 			</section>
 		</div>
