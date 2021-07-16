@@ -40,7 +40,7 @@ const SongDetails = () => {
 	}, [id]);
 
 	return (
-		<div>
+		<div className="card">
 			<p>
 				<strong>Song:</strong> {songInfo.name}
 			</p>
@@ -54,7 +54,8 @@ const SongDetails = () => {
 				<strong>Time:</strong> {songInfo.time}
 			</p>
 			<p>
-				<strong>Fav:</strong> {`${songInfo.is_favorite}`}
+				<strong>Fav:</strong>{" "}
+				{`${songInfo.is_favorite ? <span>✅</span> : <span>🧐</span>}`}
 			</p>
 			<section className="details-btns">
 				<div>

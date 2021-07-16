@@ -2,12 +2,14 @@ import SongDetails from "../Components/SongDetails";
 
 const Show = () => {
 	return (
-		<div>
-			<h1>Let's Boogie!</h1>
-			<section>
+		<section className="Show">
+			<div className="glass">
+				<div className="blurb">
+					<h1>That's My Jam!</h1>
+				</div>
 				<SongDetails />
-			</section>
-		</div>
+			</div>
+		</section>
 	);
 };
 export default Show;
