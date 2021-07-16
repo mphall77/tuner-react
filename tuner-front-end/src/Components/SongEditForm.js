@@ -59,14 +59,13 @@ const SongEditForm = () => {
 	}, []);
 
 	return (
-		<section className="Edit">
-			<h1>Let's change it up</h1>
+		<section className="form-container">
 			<form>
 				<label>
-					Name:
+					Song:
 					<input
 						type="text"
-						name="name"
+						name="song"
 						value={selectedSong.name}
 						onChange={handleTextChange}
 						size="50"
@@ -106,13 +105,15 @@ const SongEditForm = () => {
 					<input
 						type="checkbox"
 						name="is_favorite"
+						value={selectedSong.is_favorite}
 						// checked={true}
 						onChange={handleCheckbox}
 					/>
 				</label>
-
-				<div className="submit-btn" onClick={handleSubmit}>
-					<button>Submit</button>
+				<div>
+					<button className="form-submit-btn" onClick={handleSubmit}>
+						Submit
+					</button>
 				</div>
 			</form>
 			<Link to={`/songs/${id}`}>

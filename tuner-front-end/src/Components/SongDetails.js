@@ -41,22 +41,24 @@ const SongDetails = () => {
 
 	return (
 		<div className="card">
-			<p>
-				<strong>Song:</strong> {songInfo.name}
-			</p>
-			<p>
-				<strong>Artist:</strong> {songInfo.artist}
-			</p>
-			<p>
-				<strong>Album:</strong> {songInfo.album}
-			</p>
-			<p>
-				<strong>Time:</strong> {songInfo.time}
-			</p>
-			<p>
-				<strong>Fav:</strong>{" "}
-				{`${songInfo.is_favorite ? <span>✅</span> : <span>🧐</span>}`}
-			</p>
+			<div className="card-info">
+				<p>
+					<strong>Song:</strong> {songInfo.name}
+				</p>
+				<p>
+					<strong>Artist:</strong> {songInfo.artist}
+				</p>
+				<p>
+					<strong>Album:</strong> {songInfo.album}
+				</p>
+				<p>
+					<strong>Time:</strong> {songInfo.time}
+				</p>
+				<p>
+					<strong>Fav:</strong>{" "}
+					{`${songInfo.is_favorite ? <span>✅</span> : <span>🧐</span>}`}
+				</p>
+			</div>
 			<section className="details-btns">
 				<div>
 					<Link to={`/songs`}>

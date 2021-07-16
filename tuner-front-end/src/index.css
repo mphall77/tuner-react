@@ -18,12 +18,15 @@ button {
 	background: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0.5),
-		rgba(243, 4, 4, 0.3)
+		rgba(136, 85, 159, 0.4)
 	);
 	border-radius: 0.3rem;
 	height: 1.7rem;
+	width: 6rem;
 	color: #426696;
 	letter-spacing: 0.1em;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
 }
 
 h1 {
@@ -42,16 +45,20 @@ nav {
 	background-color: rgb(26, 193, 221);
 	width: 100%;
 	height: 10vh;
+	padding-left: 2rem;
 }
 
 nav a {
 	margin: 1rem;
 	text-decoration: none;
+	color: rgba(66, 102, 150, 0.8);
+	font-weight: 500;
 }
 
-/* SONGS */
+/* S O N G S */
 .Songs,
-.Show {
+.Show,
+.Edit {
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
@@ -116,7 +123,6 @@ td a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 2rem;
 }
 
 .details-btns button {
@@ -124,27 +130,85 @@ td a {
 	margin-top: 1rem;
 }
 
-.card {
-	/* border: 1px solid red; */
-	padding: 3rem;
+.card,
+form {
 	background: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0.5),
 		rgba(255, 255, 255, 0.3)
 	);
 	border-radius: 1.5rem;
-	box-shadow: inset 0 0 10px #a5a2a2;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.card p {
+.Edit .card {
+	width: 10rem;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.Show .card {
+	width: 25rem;
+	padding: 4rem;
+}
+
+.card-info {
+	margin-bottom: 1rem;
+}
+.card-info p {
 	color: rgba(5, 14, 14, 0.6);
-	line-height: 2rem;
+	line-height: 2.5rem;
+	border-bottom: 2px solid rgba(70, 90, 116, 0.3);
 }
 
 .card p strong {
 	color: rgba(5, 14, 14, 0.4);
 	margin-right: 0.5rem;
+}
+
+/* EDIT FORM */
+.form-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 90%;
+}
+
+form {
+	width: 25rem;
+	padding: 1rem;
+	color: rgba(5, 14, 14, 0.6);
+	display: flex;
+	flex-direction: column;
+}
+
+input[type="text"] {
+	display: block;
+	width: 90%;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	font-size: 1rem;
+	color: #426696;
+	background: rgba(136, 85, 159, 0.4);
+	border: none;
+	border-radius: 0.5rem;
+	border-bottom: 2px solid rgba(101, 154, 218, 0.3);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+input[type="checkbox"] {
+	margin-left: 1rem;
+}
+
+.form-submit-btn {
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	height: 40px;
+	opacity: 0.9;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* G L A S S EFFECT */

@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import "../NavBar.css";
 
 const NavBar = () => {
 	return (
 		<nav>
 			<button className="nav-btn">
-				<Link to="/songs">Songs</Link>
+				<Link to="/songs">SONGS</Link>
 			</button>
 		</nav>
 	);
