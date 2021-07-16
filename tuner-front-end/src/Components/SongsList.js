@@ -23,25 +23,27 @@ const SongsList = () => {
 	return (
 		<div className="Songs">
 			<section className="table-container">
-				{/* <div className="blurb">
+				<div className="glass">
+					<div className="blurb">
 						<h1>That's My Jam!</h1>
-					</div> */}
-				<table className="glass">
-					<thead>
-						<tr>
-							<th>Song</th>
-							<th>Artist</th>
-							<th>Album</th>
-							<th>Time</th>
-							<th>Favorite</th>
-						</tr>
-					</thead>
-					<tbody>
-						{songs.map((song) => {
-							return <SongListItem key={song.id} song={song} />;
-						})}
-					</tbody>
-				</table>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Song</th>
+								<th>Artist</th>
+								<th>Album</th>
+								<th>Time</th>
+								<th>Favorite</th>
+							</tr>
+						</thead>
+						<tbody>
+							{songs.map((song) => {
+								return <SongListItem key={song.id} song={song} />;
+							})}
+						</tbody>
+					</table>
+				</div>
 			</section>
 		</div>
 	);
